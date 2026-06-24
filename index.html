@@ -10,23 +10,53 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            /* Estilos para el selector de idiomas */
+            .lang-selector {
+                text-align: center;
+                margin-bottom: 1.5em;
+                padding-top: 1em;
+            }
+            .lang-btn {
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                text-decoration: none;
+                margin: 0 8px;
+                font-weight: 600;
+                font-size: 0.9em;
+                transition: color 0.2s;
+                border-bottom: none !important;
+            }
+            .lang-btn:hover {
+                color: #4acaa8; /* Color principal de la plantilla */
+            }
+            .lang-btn.active {
+                color: #ffffff;
+            }
+        </style>
     </head>
     <body class="is-preload">
 
         <!-- Header -->
             <section id="header">
                 <header>
+                    <!-- Selector de Idiomas -->
+                    <div class="lang-selector">
+                        <a id="lang-eu" class="lang-btn" onclick="setLang('eu')">EUS</a> | 
+                        <a id="lang-es" class="lang-btn" onclick="setLang('es')">ES</a> | 
+                        <a id="lang-en" class="lang-btn" onclick="setLang('en')">EN</a>
+                    </div>
+
                     <span class="image avatar"><img src="images/avatar.jpg" alt="Josu Lazpiur" /></span>
                     <h1 id="logo"><a href="#">Josu Lazpiur</a></h1>
-                    <p>Computer Engineering Student<br />
-                    Cybersecurity, Networks & Cloud</p>
+                    <p data-i18n="role">Computer Engineering Student<br />Cybersecurity, Cloud & Industrial Edge</p>
                 </header>
                 <nav id="nav">
                     <ul>
-                        <li><a href="#one" class="active">About</a></li>
-                        <li><a href="#two">Technical Skills</a></li>
-                        <li><a href="#three">Featured Projects</a></li>
-                        <li><a href="#four">Contact</a></li>
+                        <li><a href="#one" class="active" data-i18n="nav_about">About</a></li>
+                        <li><a href="#two" data-i18n="nav_skills">Technical Skills</a></li>
+                        <li><a href="#three" data-i18n="nav_projects">Featured Projects</a></li>
+                        <li><a href="#four" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </nav>
                 <footer>
@@ -44,84 +74,83 @@
                 <!-- Main -->
                     <div id="main">
 
-                        <!-- One -->
+                        <!-- One (About) -->
                             <section id="one">
                                 <div class="image main" data-position="center">
                                     <img src="images/banner.jpg" alt="Technology Banner" />
                                 </div>
                                 <div class="container">
                                     <header class="major">
-                                        <h2>Hi, I'm Josu.</h2>
-                                        <p>Bridging the gap between IT and OT<br />
-                                        through scalable software and secure infrastructure.</p>
+                                        <h2 data-i18n="about_title">Hi, I'm Josu.</h2>
+                                        <p data-i18n="about_subtitle">Bridging the gap between IT and OT<br />through scalable software and secure infrastructure.</p>
                                     </header>
-                                    <p>I am a Computer Engineering student at Mondragon Unibertsitatea, driven by a strong motivation to step out of my comfort zone and leverage innovative technologies to solve complex problems. My goal is to translate academic theory into practical, secure, and scalable solutions within the fields of Cybersecurity, Infrastructure, and Cloud Computing.</p>
-                                    <p>Currently, I am working as an Industrial Software Developer at Onnera Group (Dual Training), digitizing critical plant operations and integrating SAP ERP systems. In Autumn 2026, I will be studying Information Technology and IoT Engineering at Savonia UAS (Finland) as part of an Erasmus+ exchange program.</p>
+                                    <p data-i18n="about_p1">I am a Computer Engineering student at Mondragon Unibertsitatea, driven by a strong motivation to step out of my comfort zone and leverage innovative technologies to solve complex problems. My goal is to translate academic theory into practical, secure, and scalable solutions within the fields of Cybersecurity, Infrastructure, and Cloud Computing.</p>
+                                    <p data-i18n="about_p2">Currently, I am working as an Industrial Software Developer at Onnera Group (Dual Training), digitizing critical plant operations and integrating SAP ERP systems. In Autumn 2026, I will be studying Information Technology and IoT Engineering at Savonia UAS (Finland) as part of an Erasmus+ exchange program.</p>
                                 </div>
                             </section>
 
-                        <!-- Two -->
+                        <!-- Two (Skills) -->
                             <section id="two">
                                 <div class="container">
-                                    <h3>Technical Skills</h3>
-                                    <p>Throughout my academic and dual-training experience, I have developed a robust skill set spanning software engineering, systems administration, and industrial networks.</p>
+                                    <h3 data-i18n="skills_title">Technical Skills</h3>
+                                    <p data-i18n="skills_desc">Throughout my academic and dual-training experience, I have developed a robust skill set spanning software engineering, systems administration, and industrial networks.</p>
                                     <ul class="feature-icons">
-                                        <li class="icon solid fa-code"><strong>Software Dev:</strong> Java, C, Python, JavaScript.</li>
-                                        <li class="icon solid fa-server"><strong>Backend & Data:</strong> Flask, SQL Server, SAP ERP Integration.</li>
-                                        <li class="icon solid fa-network-wired"><strong>Networking:</strong> Cisco CCNA (Modules 1-3), TCP/IP, Routing & Switching.</li>
-                                        <li class="icon solid fa-shield-alt"><strong>Cybersecurity:</strong> Linux/Unix Admin, Nmap, Wireshark, Firewalls.</li>
-                                        <li class="icon solid fa-cloud"><strong>DevOps & Cloud:</strong> Docker, Git/GitHub, GCP basics.</li>
-                                        <li class="icon solid fa-language"><strong>Languages:</strong> English (B2), Spanish (Native), Basque (Native).</li>
+                                        <li class="icon solid fa-code"><strong data-i18n="skill_1">Software Dev:</strong> Java, C, Python, JavaScript.</li>
+                                        <li class="icon solid fa-server"><strong data-i18n="skill_2">Backend & Data:</strong> Flask, SQL Server, SAP ERP.</li>
+                                        <li class="icon solid fa-network-wired"><strong data-i18n="skill_3">Networking:</strong> Cisco CCNA, TCP/IP, Routing & Switching.</li>
+                                        <li class="icon solid fa-shield-alt"><strong data-i18n="skill_4">Cybersecurity:</strong> Linux Admin, Nmap, Wireshark, Firewalls.</li>
+                                        <li class="icon solid fa-cloud"><strong data-i18n="skill_5">DevOps & Cloud:</strong> Docker, Git/GitHub, GCP basics.</li>
+                                        <li class="icon solid fa-language"><strong data-i18n="skill_6">Languages:</strong> English (B2), Spanish (Native), Basque (Native).</li>
                                     </ul>
                                 </div>
                             </section>
 
-                        <!-- Three -->
+                        <!-- Three (Projects) -->
                             <section id="three">
                                 <div class="container">
-                                    <h3>Featured Projects</h3>
-                                    <p>A selection of my university Project-Based Learning (PBL) challenges, demonstrating practical experience in software architecture, edge AI, and distributed systems.</p>
+                                    <h3 data-i18n="projects_title">Featured Projects</h3>
+                                    <p data-i18n="projects_desc">A selection of my university Project-Based Learning (PBL) challenges, demonstrating practical experience in software architecture, edge AI, and distributed systems.</p>
                                     <div class="features">
                                         <article>
                                             <a href="https://github.com/JosuLazpiur/PBL6" target="_blank" class="image"><img src="images/pic01.jpg" alt="AirBio" /></a>
                                             <div class="inner">
                                                 <h4>AirBio - Real-Time Flight CO2 Monitor</h4>
-                                                <p>A distributed SaaS platform for real-time auditing of aviation carbon emissions. Developed with a hybrid cloud Lambda architecture using Apache NiFi, Kafka, Spark, Cassandra, Spring Boot, and React.</p>
+                                                <p data-i18n="proj1_desc">A distributed SaaS platform for real-time auditing of aviation carbon emissions. Developed with a hybrid cloud Lambda architecture using Apache NiFi, Kafka, Spark, Cassandra, Spring Boot, and React.</p>
                                             </div>
                                         </article>
                                         <article>
                                             <a href="https://github.com/JosuLazpiur/PBL5" target="_blank" class="image"><img src="images/pic02.jpg" alt="RecyclAI" /></a>
                                             <div class="inner">
                                                 <h4>RecyclAI - Smart Waste Management</h4>
-                                                <p>An automated smart bin utilizing Edge AI (MobileNetV2 on Raspberry Pi) to classify waste in real-time. Includes a React web dashboard and a multithreaded OS simulation built in Java.</p>
+                                                <p data-i18n="proj2_desc">An automated smart bin utilizing Edge AI (MobileNetV2 on Raspberry Pi) to classify waste in real-time. Includes a React web dashboard and a multithreaded OS simulation built in Java.</p>
                                             </div>
                                         </article>
                                         <article>
                                             <a href="https://github.com/JosuLazpiur/PBL4" target="_blank" class="image"><img src="images/pic03.jpg" alt="GERTUKO" /></a>
                                             <div class="inner">
                                                 <h4>GERTUKO - Local Commerce Platform</h4>
-                                                <p>A web platform connecting local artisans with consumers. Built with Java, Spring Boot, and Hibernate, featuring real-time WebSockets messaging and Python-based statistical sales estimation.</p>
+                                                <p data-i18n="proj3_desc">A web platform connecting local artisans with consumers. Built with Java, Spring Boot, and Hibernate, featuring real-time WebSockets messaging and Python-based statistical sales estimation.</p>
                                             </div>
                                         </article>
                                     </div>
                                 </div>
                             </section>
 
-                        <!-- Four -->
+                        <!-- Four (Contact) -->
                             <section id="four">
                                 <div class="container">
-                                    <h3>Let's Connect</h3>
-                                    <p>I am actively seeking a 30-ECTS Final Degree Project (BSc Thesis) starting in early 2027, ideally focused on Cybersecurity, Cloud Architecture, or Industrial Edge environments. Feel free to reach out!</p>
+                                    <h3 data-i18n="contact_title">Let's Connect</h3>
+                                    <p data-i18n="contact_desc">I am actively seeking a 30-ECTS Final Degree Project (BSc Thesis) starting in early 2027, ideally focused on Cybersecurity, Cloud Architecture, or Industrial Edge environments. Feel free to reach out!</p>
                                     <form method="post" action="mailto:josu.lazpiur@alumni.mondragon.edu">
                                         <div class="row gtr-uniform">
-                                            <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-                                            <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-                                            <div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-                                            <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+                                            <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" data-i18n="form_name" /></div>
+                                            <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" data-i18n="form_email" /></div>
+                                            <div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" data-i18n="form_subject" /></div>
+                                            <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6" data-i18n="form_msg"></textarea></div>
                                             <div class="col-12">
                                                 <ul class="actions">
-                                                    <li><input type="submit" class="primary" value="Send Message" /></li>
-                                                    <li><input type="reset" value="Reset Form" /></li>
+                                                    <li><input type="submit" class="primary" value="Send Message" data-i18n="form_send" /></li>
+                                                    <li><input type="reset" value="Reset Form" data-i18n="form_reset" /></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -151,5 +180,99 @@
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
 
+            <!-- Multilingual Dictionary & Logic -->
+            <script>
+                const i18n = {
+                    "en": {
+                        "role": "Computer Engineering Student<br />Cybersecurity, Cloud & Industrial Edge",
+                        "nav_about": "About", "nav_skills": "Technical Skills", "nav_projects": "Featured Projects", "nav_contact": "Contact",
+                        "about_title": "Hi, I'm Josu.",
+                        "about_subtitle": "Bridging the gap between IT and OT<br />through scalable software and secure infrastructure.",
+                        "about_p1": "I am a Computer Engineering student at Mondragon Unibertsitatea, driven by a strong motivation to step out of my comfort zone and leverage innovative technologies to solve complex problems. My goal is to translate academic theory into practical, secure, and scalable solutions within the fields of Cybersecurity, Infrastructure, and Cloud Computing.",
+                        "about_p2": "Currently, I am working as an Industrial Software Developer at Onnera Group (Dual Training), digitizing critical plant operations and integrating SAP ERP systems. In Autumn 2026, I will be studying Information Technology and IoT Engineering at Savonia UAS (Finland) as part of an Erasmus+ exchange program.",
+                        "skills_title": "Technical Skills",
+                        "skills_desc": "Throughout my academic and dual-training experience, I have developed a robust skill set spanning software engineering, systems administration, and industrial networks.",
+                        "skill_1": "Software Dev:", "skill_2": "Backend & Data:", "skill_3": "Networking:", "skill_4": "Cybersecurity:", "skill_5": "DevOps & Cloud:", "skill_6": "Languages:",
+                        "projects_title": "Featured Projects",
+                        "projects_desc": "A selection of my university Project-Based Learning (PBL) challenges, demonstrating practical experience in software architecture, edge AI, and distributed systems.",
+                        "proj1_desc": "A distributed SaaS platform for real-time auditing of aviation carbon emissions. Developed with a hybrid cloud Lambda architecture using Apache NiFi, Kafka, Spark, Cassandra, Spring Boot, and React.",
+                        "proj2_desc": "An automated smart bin utilizing Edge AI (MobileNetV2 on Raspberry Pi) to classify waste in real-time. Includes a React web dashboard and a multithreaded OS simulation built in Java.",
+                        "proj3_desc": "A web platform connecting local artisans with consumers. Built with Java, Spring Boot, and Hibernate, featuring real-time WebSockets messaging and Python-based statistical sales estimation.",
+                        "contact_title": "Let's Connect",
+                        "contact_desc": "I am actively seeking a 30-ECTS Final Degree Project (BSc Thesis) starting in early 2027, ideally focused on Cybersecurity, Cloud Architecture, or Industrial Edge environments. Feel free to reach out!",
+                        "form_name": "Name", "form_email": "Email", "form_subject": "Subject", "form_msg": "Message", "form_send": "Send Message", "form_reset": "Reset Form"
+                    },
+                    "es": {
+                        "role": "Estudiante de Ingeniería Informática<br />Ciberseguridad, Cloud y Edge",
+                        "nav_about": "Sobre mí", "nav_skills": "Habilidades Técnicas", "nav_projects": "Proyectos", "nav_contact": "Contacto",
+                        "about_title": "Hola, soy Josu.",
+                        "about_subtitle": "Conectando IT y OT mediante<br />software escalable e infraestructura segura.",
+                        "about_p1": "Estudiante de Ingeniería Informática en Mondragon Unibertsitatea con gran motivación para salir de mi zona de confort y aprovechar tecnologías innovadoras para resolver problemas complejos. Busco trasladar la teoría académica a soluciones prácticas, robustas y escalables en los ámbitos de la Ciberseguridad, Infraestructuras y Cloud Computing.",
+                        "about_p2": "Actualmente, trabajo como Técnico de Digitalización (Formación Dual) en Onnera Group, actuando como puente entre IT y OT mediante la digitalización de operaciones críticas en planta. En otoño de 2026, estudiaré Information Technology e IoT Engineering en Savonia UAS (Finlandia) como parte del programa de intercambio Erasmus+.",
+                        "skills_title": "Habilidades Técnicas",
+                        "skills_desc": "A través de mi experiencia académica y formación dual, he desarrollado sólidas habilidades en ingeniería de software, administración de sistemas y redes industriales.",
+                        "skill_1": "Desarrollo:", "skill_2": "Backend y Datos:", "skill_3": "Redes:", "skill_4": "Ciberseguridad:", "skill_5": "DevOps y Cloud:", "skill_6": "Idiomas:",
+                        "projects_title": "Proyectos Destacados",
+                        "projects_desc": "Una selección de mis proyectos universitarios (PBL), demostrando experiencia práctica en arquitectura de software, inteligencia artificial y sistemas distribuidos.",
+                        "proj1_desc": "Plataforma SaaS distribuida para la auditoría en tiempo real de emisiones de carbono. Desarrollada con una arquitectura Lambda híbrida usando Apache NiFi, Kafka, Spark, Cassandra, Spring Boot y React.",
+                        "proj2_desc": "Contenedor inteligente que utiliza Inteligencia Artificial (MobileNetV2 en Raspberry Pi) para clasificar residuos. Incluye un dashboard web y una simulación de sistema operativo multihilo en Java.",
+                        "proj3_desc": "Plataforma web para conectar artesanos locales con consumidores. Construida con Java, Spring Boot e Hibernate, con mensajería por WebSockets y un algoritmo de regresión lineal en Python para estimar ventas.",
+                        "contact_title": "Conectemos",
+                        "contact_desc": "Busco activamente un Trabajo de Fin de Grado (TFG) de 30 ECTS para principios de 2027, idealmente enfocado en Ciberseguridad, Arquitectura Cloud o entornos Industrial Edge. ¡Hablemos!",
+                        "form_name": "Nombre", "form_email": "Correo electrónico", "form_subject": "Asunto", "form_msg": "Mensaje", "form_send": "Enviar Mensaje", "form_reset": "Borrar"
+                    },
+                    "eu": {
+                        "role": "Ingeniaritza Informatikoko Ikaslea<br />Zibersegurtasuna, Cloud eta Edge",
+                        "nav_about": "Niri buruz", "nav_skills": "Trebetasun Teknikoak", "nav_projects": "Proiektuak", "nav_contact": "Harremanetarako",
+                        "about_title": "Kaixo, Josu naiz.",
+                        "about_subtitle": "IT eta OT konektatzen<br />software eskalagarri eta azpiegitura seguruen bidez.",
+                        "about_p1": "Mondragon Unibertsitateko Ingeniaritza Informatikoko ikaslea, nire erosotasun-eremutik irten eta arazo konplexuak konpontzeko teknologia berritzaileak erabiltzeko motibazio handiarekin. Teoria akademikoa Zibersegurtasun, Azpiegitura eta Cloud Computing arloetako soluzio sendo, seguru eta eskalagarrietan bilakatzea dut helburu.",
+                        "about_p2": "Gaur egun, Digitalizazio Teknikari gisa nabil Onnera Group-en (Prestakuntza Duala), IT eta OT arteko zubi-lanak egiten lantegiko operazio kritikoak digitalizatuz. 2026ko udazkenean Information Technology eta IoT Engineering ikasiko ditut Savonia UAS-en (Finlandia), Erasmus+ truke-programaren barruan.",
+                        "skills_title": "Trebetasun Teknikoak",
+                        "skills_desc": "Nire esperientzia akademiko eta prestakuntza dualari esker, trebetasun sendoak garatu ditut software ingeniaritzan, sistemen administrazioan eta sare industrialetan.",
+                        "skill_1": "Garapena:", "skill_2": "Backend / Datuak:", "skill_3": "Sareak:", "skill_4": "Zibersegurtasuna:", "skill_5": "DevOps / Cloud:", "skill_6": "Hizkuntzak:",
+                        "projects_title": "Proiektu Nabarmentzekoak",
+                        "projects_desc": "Nire unibertsitateko proiektuen (PBL) aukeraketa bat, software arkitekturan, adimen artifizialean eta sistema banatuetan daukadan esperientzia praktikoa erakutsiz.",
+                        "proj1_desc": "SaaS plataforma banatua hegazkinen karbono isuriak denbora errealean auditatzeko. Hodei hibridoko Lambda arkitektura erabiliz garatua (Apache NiFi, Kafka, Spark, Cassandra, Spring Boot eta React).",
+                        "proj2_desc": "Edukiontzi adimenduna, Adimen Artifiziala erabiliz (MobileNetV2 Raspberry Pi-n) zaborra denbora errealean sailkatzeko. Web aginte-panel bat eta Java-n egindako hari anitzeko sistema eragilearen simulazioa barne hartzen ditu.",
+                        "proj3_desc": "Bertako artisauak eta kontsumitzaileak konektatzeko web plataforma. Java, Spring Boot eta Hibernate erabiliz eraikia, denbora errealeko WebSockets mezu-sistemarekin eta Python-en oinarritutako salmenten estimazio estatistikoarekin.",
+                        "contact_title": "Konektatu dezagun",
+                        "contact_desc": "2027 hasierarako 30 ECTS-ko Gradu Amaierako Lana (GrAL) bilatzen ari naiz aktiboki, Zibersegurtasun, Cloud Arkitektura edo Industrial Edge inguruneetan zentratua. Idatzi lasai!",
+                        "form_name": "Izena", "form_email": "Posta elektronikoa", "form_subject": "Gaia", "form_msg": "Mezua", "form_send": "Mezua Bidali", "form_reset": "Garbitu"
+                    }
+                };
+
+                function setLang(lang) {
+                    // Cambiar textos
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (i18n[lang] && i18n[lang][key]) {
+                            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                                // Para placeholders de formularios o botones
+                                if (el.type === 'submit' || el.type === 'reset') {
+                                    el.value = i18n[lang][key];
+                                } else {
+                                    el.placeholder = i18n[lang][key];
+                                }
+                            } else {
+                                el.innerHTML = i18n[lang][key];
+                            }
+                        }
+                    });
+
+                    // Actualizar botones del menú
+                    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                    document.getElementById('lang-' + lang).classList.add('active');
+
+                    // Guardar preferencia
+                    localStorage.setItem('portfolio_lang', lang);
+                }
+
+                // Cargar idioma guardado o por defecto Español
+                document.addEventListener("DOMContentLoaded", () => {
+                    const savedLang = localStorage.getItem('portfolio_lang') || 'es';
+                    setLang(savedLang);
+                });
+            </script>
     </body>
 </html>
